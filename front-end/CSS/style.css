@@ -6,7 +6,11 @@ body {
 }
 
 #container {
-    
+    width: 90%; 
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(25px);
@@ -14,12 +18,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35),inset 0 0 0.5px rgba(255, 255, 255, 0.2);
     color: white;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
 }
 
-Form {
-    border: #fff;
+#Login {
+    width: 100%;
+    max-width: 330px;
+    border-radius: 5px;
+    padding: 20px;
+    display: none;
 
 }
 
