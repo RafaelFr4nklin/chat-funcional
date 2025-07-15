@@ -1,5 +1,5 @@
 const {WebSocketServer} = require("ws");
-const dotenv = requere("dotenv");
+const dotenv = require("dotenv");
 
 dotenv.config();
 
@@ -13,5 +13,5 @@ wss.on("connection", (ws) =>{
         wss.clients.forEach((clients) => clients.send(data.toString()));
     });
 
-    console.log("client conect");
+    console.log("client conectrffrf");
 });
