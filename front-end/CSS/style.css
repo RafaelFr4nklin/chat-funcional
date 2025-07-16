@@ -1,6 +1,5 @@
 body {
     background: linear-gradient(to left top, #2e3440, #3b4252, #4c566a, #463950);
-    background-size: 600% 600%;
     display: flex;
     flex-direction: column;
 }
