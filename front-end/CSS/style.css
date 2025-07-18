@@ -80,7 +80,7 @@ body {
 #chat {
     width: 90vw;
     height: 90vh;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
 
@@ -96,7 +96,7 @@ body {
 .chat-mensagens {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;  /* empurra conteúdo para a parte inferior */
+    justify-content: flex-end;
     flex-grow: 1;
     padding: 30px 30px 90px;
     overflow-y: auto;
@@ -108,10 +108,11 @@ body {
     font-size: 0.8rem;
     margin-top: 15px;
     margin-bottom: 15px;
+    margin: 10px;
     font-weight: 500;
     line-height: 22px;
     border-radius: 12px 12px 0 12px;
-    margin-left: auto;  
+    margin-left: auto;
     background-color: antiquewhite;
     color: #222;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -158,8 +159,25 @@ body {
 
 
 
-.mensoutro{
-    background-color: #4c566a;
+.mensoutro {
+    background-color: #262b36;
     color: #fff;
-    border-radius: 10px 10px 10px 0px ;
+    border-radius: 12px 12px 12px 0;
+    padding: 15px;
+    max-width: 300px;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin: 10px;
+    font-weight: 500;
+    line-height: 22px;
+    /* border-radius: 12px 12px 0 12px; */
+    align-self: flex-start;
+}
+
+.escritorOU{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: darkcyan;
 }
