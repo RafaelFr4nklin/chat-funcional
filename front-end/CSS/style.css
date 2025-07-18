@@ -30,7 +30,16 @@ body {
     border-radius: 5px;
     padding: 20px;
     text-align: center;
-    display: none;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35), inset 0 0 0.5px rgba(255, 255, 255, 0.2);
+    z-index: 20;
 }
 
 #Login h2 {
@@ -47,12 +56,12 @@ body {
 }
 
 .login_input {
-    border: none;
+    border: none;   
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.85rem;
     padding: 15px;
-    color: whitesmoke;
+    color: black;
 }
 
 .login_input:focus {
@@ -175,9 +184,15 @@ body {
     align-self: flex-start;
 }
 
-.escritorOU{
+.escritorOU {
     display: block;
     margin-bottom: 10px;
     font-weight: 700;
     color: darkcyan;
 }
+
+
+/* 
+p{
+    color: cornflowerblue;
+} */
