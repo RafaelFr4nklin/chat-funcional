@@ -19,12 +19,37 @@ function escrevaVisual(contet){
     return div
 }
 
+function EscreveOutroVisu(contet, escritor, cor){
+    const div = document.createElement("div");
+    const span = document.createElement("span");
+
+    div.classList.add("mensoutro");
+    span.classList.add("escritorOU");
+
+    div.appendChild(span);
+
+    span.innerHTML = escritor;
+    span.style.color = cor;
+    div.innerHTML += contet;
+    
+
+    return div;
+}
+
+
+
 
 const cores = ['blueviolet', 'cadetblue', 'brown', 'coral', 'cornflowerblue'];
 
 function corAleatoria() {
     const sorteio = Math.floor(Math.random() * cores.length);
     return cores[sorteio];
+}
+
+function scroolChat(){
+    window.scrollTo({
+        top: document.body.scrollHeight,behavior:"smooth"
+    })
 }
 
 const Usuario = {
@@ -34,18 +59,13 @@ const Usuario = {
 };
 
 function mensagemEnvia({ data }) {
-
     const{usuarioID, usuarioNome, usuarioCor, contet} = JSON.parse(data);
+    const mensagemExibir = usuarioID == Usuario.id ? escrevaVisual(contet) : EscreveOutroVisu(contet, usuarioNome, usuarioCor);
+    
 
-    const elemento = escrevaVisual(contet);
+    chatmensagens.appendChild(mensagemExibir);
+    scroolChat();
 
-    chatmensagens.appendChild(elemento);
-    // try {
-    //     const json = JSON.parse(data);
-    //     console.log("Mensagem recebida (JSON):", json);
-    // } catch (err) {
-    //     console.warn("Mensagem recebida (texto simples):", data);
-    // }
 }
 
 
