@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,47 +7,29 @@
     <link rel="shortcut icon" href="../front-end/CSS/imagens/logo.fav.png" type="image/x-icon">
     <title>Braian Chat</title>
 </head>
-
 <body>
     <main>
         <section id="container">
-
             <section id="Login">
                 <h2>Login</h2>
                 <form action="" id="login__form">
-                    <input type="text" class="login_input" placeholder="Email">
+                    <input type="text" class="login_input" placeholder="Nome">
                     <button type="submit" class="login__button">Entrar</button>
                 </form>
-
             </section>
-
-            <!--Separação-->
 
             <section id="chat">
-
-                <section id="chat-mensagens">
-
-                    
-
-                </section>
-
-
+                <div id="chat-container">
+                    <section id="chat-mensagens"></section>
+                </div>
+                
                 <form class="chat_form">
                     <input type="text" class="chat-input" placeholder="Digite sua mensagem">
-                    <button class="chatButon" type="submit">
-                        <span class="material-symbol">Enviar</span>
-                    </button>
+                    <button class="chatButon" type="submit">Enviar</button>
                 </form>
-
             </section>
-
         </section>
     </main>
-
-
-
-
     <script src="../front-end/SCRIPTS/validarlogin.js"></script>
 </body>
-
 </html>
