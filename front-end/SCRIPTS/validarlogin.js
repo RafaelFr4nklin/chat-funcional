@@ -87,6 +87,7 @@ const submitFunc = (e) => {
     };
 
     ws.onmessage = mensagemEnvia;
+    //wsws
 };
 
 function escreveMens(e) {
