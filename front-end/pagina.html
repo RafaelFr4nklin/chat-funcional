@@ -10,18 +10,19 @@
 <body>
     <main>
         <section id="container">
-
             <section id="Login">
                 <h2>Login</h2>
-                <form action="" id="login__form">
-                    <input type="text" class="login_input" placeholder="Nome" required>
-                    <input type="email" class="login_input" id="email" required placeholder="Email">
-                    <input type="number" class="login_input" required placeholder="Idade" id="Idade">
+                <form action="" id="login__form" onsubmit="return ValidaRegistro(event)">
+                    <input type="text" class="login_input" name="nome" placeholder="Nome" required>
+                    <input type="email" class="login_input" id="email" name="email" required placeholder="Email">
+                    <input type="number" class="login_input" id="Idade" name="idade" required placeholder="Idade" min="13" max="120">
                     <button type="submit" class="login__button">Entrar</button>
                 </form>
+
+                <div id="error-message" class="error-hidden"></div>
             </section>
 
-            <section id="chat">
+            <section id="chat" style="display:none;">
                 <div id="chat-container">
                     <section id="chat-mensagens"></section>
                 </div>
@@ -33,7 +34,8 @@
             </section>
         </section>
     </main>
-    <script src="SCRIPTS/validarlogin.js"></script>
+    <!-- Correção 3: Ordem dos scripts corrigida -->
     <script src="SCRIPTS/DeixaEntrar.js"></script>
+    <script src="SCRIPTS/validarlogin.js"></script>
 </body>
 </html>

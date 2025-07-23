@@ -1,42 +1,51 @@
-const form = document.getElementById("login__form");
-const emailInput = document.getElementById("email");
-const idadeInput = document.getElementById("Idade");
-const errorMessage = document.getElementById("error-message");
-const chatSection = document.getElementById("chat");
-
-
-function validadeEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
-form.addEventListener("submit", (e) => {
+function ValidaRegistro(e) {
     e.preventDefault();
     
+    const emailInput = document.getElementById("email");
+    const idadeInput = document.getElementById("Idade");
+    const errorMessage = document.getElementById("error-message");
+    const chatSection = document.getElementById("chat");
+    
     const email = emailInput.value.trim();
-    const idade = parseInt(idadeInput.value.trim());
+    const idadeStr = idadeInput.value.trim();
+    
     let isValid = true;
-
     emailInput.style.border = "";
     idadeInput.style.border = "";
     errorMessage.className = "error-hidden";
+    errorMessage.textContent = "";
 
-    if (!validadeEmail(email)) {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
         emailInput.style.border = "2px solid red";
-        errorMessage.textContent = "Email inválido.";
+        errorMessage.textContent = "Email inválido. Use o formato exemplo@dominio.com";
         errorMessage.className = "error-show";
         isValid = false;
     }
 
-    if (isNaN(idade) || idade < 13 || idade > 120) {
+    const idade = parseInt(idadeStr, 10);
+    if (idadeStr === "" || isNaN(idade)) {
         idadeInput.style.border = "2px solid red";
-        errorMessage.textContent = "Idade deve ser entre 13 e 120 anos.";
+        errorMessage.textContent = "Por favor, insira uma idade válida";
+        errorMessage.className = "error-show";
+        isValid = false;
+    } else if (idade <= 12) {
+        idadeInput.style.border = "2px solid red";
+        errorMessage.textContent = "Você deve ter pelo menos 13 anos para acessar";
+        errorMessage.className = "error-show";
+        isValid = false;
+    } else if (idade > 120) {
+        idadeInput.style.border = "2px solid red";
+        errorMessage.textContent = "Idade inválida. O máximo permitido é 120 anos";
         errorMessage.className = "error-show";
         isValid = false;
     }
 
     if (isValid) {
-        chatSection.style.display = "block"; // Mostra o chat
-        document.getElementById("Login").style.display = "none"; // Esconde o login
+        chatSection.style.display = "block";
+        document.getElementById("Login").style.display = "none";
+        return true;
     }
-});
+    
+    return false;
+}
