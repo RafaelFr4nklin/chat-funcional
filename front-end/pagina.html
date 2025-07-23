@@ -10,10 +10,13 @@
 <body>
     <main>
         <section id="container">
+
             <section id="Login">
                 <h2>Login</h2>
                 <form action="" id="login__form">
-                    <input type="text" class="login_input" placeholder="Nome">
+                    <input type="text" class="login_input" placeholder="Nome" required>
+                    <input type="email" class="login_input" id="email" required placeholder="Email">
+                    <input type="number" class="login_input" required placeholder="Idade" id="Idade">
                     <button type="submit" class="login__button">Entrar</button>
                 </form>
             </section>
@@ -31,5 +34,6 @@
         </section>
     </main>
     <script src="SCRIPTS/validarlogin.js"></script>
+    <script src="SCRIPTS/DeixaEntrar.js"></script>
 </body>
 </html>
